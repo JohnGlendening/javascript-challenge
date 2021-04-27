@@ -1,8 +1,6 @@
 // from data.js
 var tableData = data;
 
-//console.log(tableData);
-
 //select tbody, button, input tags
 var tbody = d3.select("tbody");
 var button = d3.select("#filter-btn");
@@ -24,14 +22,14 @@ function runFilter() {
     tableData.forEach(obj => console.log(obj.datetime));
 
 
-    //filter the data as the user's input
+    //filter the user's input
     var filtedData = tableData.filter(obj => obj.datetime === inputValue);
     console.log(filtedData);
 
-    //clear the children items
+    //clear items
     tbody.html("");
 
-    //fill in the above results into the final table
+    //fill in the final table
     filtedData.forEach(obj => {
 
         //append new table row and fill with values
